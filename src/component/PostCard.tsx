@@ -7,7 +7,7 @@ export default function PostCard({
   post: { title, description, date, category, path },
 }: Props) {
   return (
-    <Link href={`/post/${path}`}>
+    <Link href={`/posts/${path}`}>
       <article className="rounded-md overflow-hidden shadow-md hover:shadow-xl">
         <Image
           className="w-full"
