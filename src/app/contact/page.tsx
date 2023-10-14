@@ -1,6 +1,12 @@
 import ContactForm from "@/component/ContactForm";
+import { Metadata } from "next";
 import { AiFillGithub } from "react-icons/ai";
 import { BiLogoBlogger } from "react-icons/bi";
+
+export const metadata: Metadata = {
+  title: "Contact me",
+  description: "Kys Contact me",
+};
 
 const LINKS = [
   { icon: <AiFillGithub />, url: "https://github.com/youngseoKim-kr" },

@@ -8,10 +8,13 @@ import Footer from "@/component/Footer";
 const Sans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kys blog",
+  title: {
+    default: "Kys blog",
+    template: "Kys blog | %s",
+  },
   description: "Take a look at kys' story",
   icons: {
-    icon: "/facicon.ico",
+    icon: "/favicon.ico",
   },
 };
 

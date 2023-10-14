@@ -1,4 +1,11 @@
+import { Metadata } from "next";
+
 const TITLE_CLASS = "text-2xl font-bold text-gray-800 my-2";
+
+export const metadata: Metadata = {
+  title: "About me",
+  description: "Kys About me",
+};
 
 export default function About() {
   return (

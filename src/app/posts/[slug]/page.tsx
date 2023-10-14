@@ -1,20 +1,25 @@
 import AdjacentPostCard from "@/component/AdjacentPostCard";
 import PostContent from "@/component/PostContent";
 import { getPostData } from "@/service/posts";
+import { Metadata } from "next";
 import Image from "next/image";
+
+//동적인 metadata
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
+  const { title, description } = await getPostData(slug);
+  return {
+    title,
+    description,
+  };
+}
 
 type Props = {
   params: {
     slug: string;
   };
 };
-
-//동적인 metadata
-export function generateMetadata({ params }: Props) {
-  return {
-    title: `제품의 이름: ${params.slug}`,
-  };
-}
 
 export default async function PostPage({ params: { slug } }: Props) {
   const post = await getPostData(slug);
