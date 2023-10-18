@@ -5,6 +5,7 @@ import { useState } from "react";
 import PostCard from "./PostCard";
 import Categories from "./Categories";
 import PostsGrid from "./PostsGrid";
+import PostSearch from "./PostSearch";
 
 type Props = {
   posts: Post[];
@@ -18,14 +19,20 @@ export default function FilterablePosts({ posts, categories }: Props) {
     selected === ALL_POSTS
       ? posts
       : posts.filter((post) => post.category === selected);
+  const filterPost = (title: string): void => {
+    console.log(title);
+  };
   return (
-    <section className="flex m-6">
-      <PostsGrid posts={filtered} />
-      <Categories
-        categories={categories}
-        selected={selected}
-        onClick={setSelected}
-      />
+    <section className="mx-6">
+      <PostSearch filterPost={filterPost} />
+      <div className="flex">
+        <PostsGrid posts={filtered} />
+        <Categories
+          categories={categories}
+          selected={selected}
+          onClick={setSelected}
+        />
+      </div>
     </section>
   );
 }
